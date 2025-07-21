@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 350px;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #1a73e8;
+            font-size: 18px;
+            margin: 0;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .status.connected {
+            background-color: #e8f5e8;
+            color: #137333;
+            border: 1px solid #ceead6;
+        }
+        
+        .status.disconnected {
+            background-color: #fce8e6;
+            color: #d93025;
+            border: 1px solid #f9dedc;
+        }
+        
+        .settings {
+            margin-bottom: 15px;
+        }
+        
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .setting-item label {
+            font-size: 14px;
+            color: #202124;
+        }
+        
+        .setting-item input[type="checkbox"] {
+            margin: 0;
+        }
+        
+        .setting-item input[type="number"] {
+            width: 60px;
+            padding: 4px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary {
+            background-color: #1a73e8;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1557b0;
+        }
+        
+        .btn-secondary {
+            background-color: #f8f9fa;
+            color: #3c4043;
+            border: 1px solid #dadce0;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f1f3f4;
+        }
+        
+        .info {
+            font-size: 12px;
+            color: #5f6368;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Gmail-X Settings</h1>
+    </div>
+    
+    <div id="status" class="status disconnected">
+        Checking connection...
+    </div>
+    
+    <div class="settings">
+        <div class="setting-item">
+            <label for="enabled">Enable X Feed</label>
+            <input type="checkbox" id="enabled" checked>
+        </div>
+        
+        <div class="setting-item">
+            <label for="maxTweets">Max Tweets</label>
+            <input type="number" id="maxTweets" value="10" min="5" max="50">
+        </div>
+        
+        <div class="setting-item">
+            <label for="refreshInterval">Refresh (minutes)</label>
+            <input type="number" id="refreshInterval" value="5" min="1" max="60">
+        </div>
+        
+        <div class="setting-item">
+            <label for="showInSidebar">Show in Sidebar</label>
+            <input type="checkbox" id="showInSidebar" checked>
+        </div>
+    </div>
+    
+    <div class="buttons">
+        <button id="saveBtn" class="btn btn-primary">Save</button>
+        <button id="refreshBtn" class="btn btn-secondary">Refresh</button>
+    </div>
+    
+    <div class="info">
+        Gmail-X v1.0.0<br>
+        Browse X within Gmail interface
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

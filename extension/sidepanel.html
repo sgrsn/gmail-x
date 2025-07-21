@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gmail-X Side Panel</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .refresh-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .refresh-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .search-bar {
+            padding: 16px;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        
+        .tweet {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: box-shadow 0.2s;
+        }
+        
+        .tweet:hover {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        
+        .tweet-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .tweet-author {
+            font-weight: 500;
+            color: #202124;
+            margin-right: 8px;
+        }
+        
+        .tweet-username {
+            color: #5f6368;
+            font-size: 14px;
+            margin-right: 8px;
+        }
+        
+        .tweet-date {
+            color: #5f6368;
+            font-size: 12px;
+            margin-left: auto;
+        }
+        
+        .tweet-content {
+            color: #202124;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        
+        .tweet-metrics {
+            display: flex;
+            gap: 16px;
+            color: #5f6368;
+            font-size: 12px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #5f6368;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #d93025;
+        }
+        
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: #5f6368;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>X Feed</h1>
+        <button id="refreshBtn" class="refresh-btn">Refresh</button>
+    </div>
+    
+    <div class="search-bar">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search X posts...">
+    </div>
+    
+    <div class="content" id="content">
+        <div class="loading">Loading X content...</div>
+    </div>
+    
+    <script src="sidepanel.js"></script>
+</body>
+</html>
